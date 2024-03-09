@@ -4,4 +4,4 @@
 
 # 项目结构
 ## easy-pay-single
-### easy-pay-single-common
+### eps-common
