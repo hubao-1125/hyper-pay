@@ -3,10 +3,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.easypay</groupId>
-    <artifactId>easypaysingle</artifactId>
-    <version>${eps.version}</version>
-
     <packaging>pom</packaging>
 
     <parent>
@@ -14,6 +10,10 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.6.13</version>
     </parent>
+
+    <groupId>com.easypay</groupId>
+    <artifactId>easypaysingle</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
 
     <properties>
         <java.version>1.8</java.version>
@@ -24,7 +24,11 @@
 
     <modules>
         <module>eps-common</module>
+        <module>eps-controller</module>
+        <module>eps-core</module>
+        <module>eps-demo</module>
         <module>eps-sdk</module>
+        <module>eps-service</module>
     </modules>
 
 
