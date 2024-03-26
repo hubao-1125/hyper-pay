@@ -5,14 +5,41 @@
 
     <packaging>jar</packaging>
 
-    <parent>
-        <groupId>com.easypay</groupId>
-        <artifactId>eps-common</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
-    </parent>
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
 
+    <developers>
+        <developer>
+            <name>hubao</name>
+            <email>douhuhu1125@gmail.com</email>
+            <organization>Sonatype</organization>
+            <organizationUrl>hubao-1125.github.io</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/simpligility/ossrh-demo.git</connection>
+        <developerConnection>scm:git:ssh://github.com:simpligility/ossrh-demo.git</developerConnection>
+        <url>http://github.com/simpligility/ossrh-demo/tree/master</url>
+    </scm>
+
+<!--    <parent>-->
+<!--        <groupId>com.easypay</groupId>-->
+<!--        <artifactId>eps-common</artifactId>-->
+<!--        <version>1.0.0-SNAPSHOT</version>-->
+<!--        <relativePath/>-->
+<!--    </parent>-->
+    <groupId>com.easypay.eps-common</groupId>
     <artifactId>eps-base-common</artifactId>
-    <version>${eps.version}</version>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>${project.artifactId}</name>
+    <description>eps base common jar</description>
+    <url>hubao-1125.github.io</url>
+
 
     <properties>
         <java.version>1.8</java.version>
@@ -68,7 +95,6 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>com.easypay.easypaysingle.EpsBaseCommonApplication</mainClass>
                     <skip>true</skip>
                 </configuration>
                 <executions>
@@ -79,6 +105,70 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+<!--                <configuration>-->
+<!--&lt;!&ndash;                    <keyname>${gpg.keyname}</keyname>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <passphraseServerId>${gpg.keyname}</passphraseServerId>&ndash;&gt;-->
+<!--                    <gpgArguments>-->
+<!--                        <arg>&#45;&#45;pinentry-mode</arg>-->
+<!--                        <arg>loopback</arg>-->
+<!--                    </gpgArguments>-->
+<!--                </configuration>-->
+
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>0.4.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <publishingServerId>central</publishingServerId>
+                    <tokenAuth>true</tokenAuth>
+                    <centralBaseUrl>https://central.sonatype.com</centralBaseUrl>
+                    <deploymentName>${project.artifactId}</deploymentName>
+                </configuration>
             </plugin>
         </plugins>
     </build>
