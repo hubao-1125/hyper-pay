@@ -68,7 +68,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>io.github.eps.epsbasecommon.EpsBaseCommonApplication</mainClass>
+                    <mainClass>com.easypay.easypaysingle.EpsBaseCommonApplication</mainClass>
                     <skip>true</skip>
                 </configuration>
                 <executions>
