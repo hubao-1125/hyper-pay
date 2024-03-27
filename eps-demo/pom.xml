@@ -6,9 +6,9 @@
     <packaging>jar</packaging>
 
     <parent>
-        <groupId>com.easypay</groupId>
+        <groupId>io.github.easypaysingle</groupId>
         <artifactId>easypaysingle</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.0.0</version>
     </parent>
 
     <artifactId>eps-demo</artifactId>
@@ -61,7 +61,6 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>io.github.eps.eps.epsdemo.EpsDemoApplication</mainClass>
                     <skip>true</skip>
                 </configuration>
                 <executions>
