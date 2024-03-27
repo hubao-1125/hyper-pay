@@ -1,4 +1,4 @@
-package io.github.easypay.easypaysingle.test;
+package io.github.easypaysingle.common;
 
 import lombok.Data;
 
