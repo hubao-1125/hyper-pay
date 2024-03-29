@@ -1,16 +1,26 @@
-package io.github.easypaysingle.service.model;
+package io.github.easypaysingle.service.model.po;
+
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Builder;
+import lombok.Data;
 
 import java.util.Date;
 
 /**
  * Table: p_we_chat_reverse_records
  */
-public class PWeChatReverseRecords {
+@Data
+@Builder
+@TableName("p_we_chat_reverse_records")
+public class WeChatReverseRecordsPO {
     /**
      * Column: id
      * Type: BIGINT
      * Remark: 主键
      */
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     /**
