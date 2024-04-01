@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -14,12 +15,10 @@ import java.math.BigDecimal;
  * 功能描述: 支付请求公共-类
  *
  * @author hubao
- * @Date: 2024/3/28$ 15:35$
+ * @since 2024/3/28$ 15:35$
  */
 @Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
+@SuperBuilder
 public class PayRequestCommonVO implements Serializable {
 
     /**

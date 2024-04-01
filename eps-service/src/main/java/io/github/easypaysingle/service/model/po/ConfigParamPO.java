@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Builder;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -14,7 +15,7 @@ import java.util.Date;
 @Data
 @Builder
 @TableName("p_config_param")
-public class ConfigParamPO {
+public class ConfigParamPO implements Serializable {
     /**
      * Column: id
      * Type: BIGINT
@@ -74,67 +75,5 @@ public class ConfigParamPO {
      */
     private Date gmtCreate;
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getSnowId() {
-        return snowId;
-    }
-
-    public void setSnowId(Long snowId) {
-        this.snowId = snowId;
-    }
-
-    public String getParamKey() {
-        return paramKey;
-    }
-
-    public void setParamKey(String paramKey) {
-        this.paramKey = paramKey == null ? null : paramKey.trim();
-    }
-
-    public String getParamValue() {
-        return paramValue;
-    }
-
-    public void setParamValue(String paramValue) {
-        this.paramValue = paramValue == null ? null : paramValue.trim();
-    }
-
-    public String getPaywayCode() {
-        return paywayCode;
-    }
-
-    public void setPaywayCode(String paywayCode) {
-        this.paywayCode = paywayCode == null ? null : paywayCode.trim();
-    }
-
-    public String getPayTerminalCode() {
-        return payTerminalCode;
-    }
-
-    public void setPayTerminalCode(String payTerminalCode) {
-        this.payTerminalCode = payTerminalCode == null ? null : payTerminalCode.trim();
-    }
-
-    public Boolean getIsDelete() {
-        return isDelete;
-    }
-
-    public void setIsDelete(Boolean isDelete) {
-        this.isDelete = isDelete;
-    }
-
-    public Date getGmtCreate() {
-        return gmtCreate;
-    }
-
-    public void setGmtCreate(Date gmtCreate) {
-        this.gmtCreate = gmtCreate;
-    }
 }

@@ -1,11 +1,14 @@
 package io.github.easypaysingle.common.enums;
 
+import lombok.Getter;
+
 /**
  * 功能描述:  支付终端-枚举类
  *
  * @author hubao
- * @Date: 2024/3/28$ 14:44$
+ * @since 2024/3/28 14:44
  */
+@Getter
 public enum PayTerminalEnum {
 
     H5("H5", "h5",  "h5"),
@@ -39,9 +42,9 @@ public enum PayTerminalEnum {
     ;
 
 
-    private String upperCode;
-    private String lowerCode;
-    private String name;
+    private final String upperCode;
+    private final String lowerCode;
+    private final String name;
 
     PayTerminalEnum(String upperCode, String lowerCode, String name) {
         this.upperCode = upperCode;
@@ -49,30 +52,5 @@ public enum PayTerminalEnum {
         this.name = name;
     }
 
-    PayTerminalEnum() {
-    }
 
-    public String getUpperCode() {
-        return upperCode;
-    }
-
-    public void setUpperCode(String upperCode) {
-        this.upperCode = upperCode;
-    }
-
-    public String getLowerCode() {
-        return lowerCode;
-    }
-
-    public void setLowerCode(String lowerCode) {
-        this.lowerCode = lowerCode;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }

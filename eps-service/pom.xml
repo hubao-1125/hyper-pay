@@ -23,6 +23,18 @@
     </properties>
 
     <dependencies>
+
+        <!--        二方库-->
+        <dependency>
+            <groupId>io.github.hubao-1125.easypaysingle</groupId>
+            <artifactId>eps-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.easypaysingle</groupId>
+            <artifactId>eps-core</artifactId>
+        </dependency>
+
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -67,20 +79,12 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring-boot.version}</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>3.0.0</version>
                 <configuration>
                     <skip>true</skip>
                 </configuration>
-                <executions>
-                    <execution>
-                        <id>repackage</id>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>

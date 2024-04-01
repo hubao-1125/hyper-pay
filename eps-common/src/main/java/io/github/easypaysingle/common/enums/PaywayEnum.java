@@ -1,11 +1,14 @@
 package io.github.easypaysingle.common.enums;
 
+import lombok.Getter;
+
 /**
  * 功能描述:  支付方式-枚举类
  *
  * @author hubao
- * @Date: 2024/3/28$ 14:27$
+ * @since 2024/3/28$ 14:27$
  */
+@Getter
 public enum PaywayEnum {
 
 
@@ -15,10 +18,10 @@ public enum PaywayEnum {
 
     ;
 
-    private String code;
-    private String payCode;
-    private String refundCode;
-    private String name;
+    private final String code;
+    private final String payCode;
+    private final String refundCode;
+    private final String name;
 
     PaywayEnum(String code, String payCode, String refundCode, String name) {
         this.code = code;
@@ -27,39 +30,4 @@ public enum PaywayEnum {
         this.name = name;
     }
 
-    PaywayEnum() {
-    }
-
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public String getPayCode() {
-        return payCode;
-    }
-
-    public void setPayCode(String payCode) {
-        this.payCode = payCode;
-    }
-
-    public String getRefundCode() {
-        return refundCode;
-    }
-
-    public void setRefundCode(String refundCode) {
-        this.refundCode = refundCode;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }

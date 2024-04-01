@@ -13,7 +13,7 @@ import java.util.Date;
  * 功能描述: 系统参数字典表-类
  *
  * @author hubao
- * @Date: 2024/3/29$ 17:38$
+ * @since 2024/3/29$ 17:38$
  */
 @Data
 @Builder

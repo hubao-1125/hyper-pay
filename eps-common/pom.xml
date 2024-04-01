@@ -5,36 +5,14 @@
 
     <packaging>jar</packaging>
 
-    <licenses>
-        <license>
-            <name>The Apache License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-        </license>
-    </licenses>
-
-    <developers>
-        <developer>
-            <name>hubao</name>
-            <email>douhuhu1125@gmail.com</email>
-            <organization>Sonatype</organization>
-            <organizationUrl>hubao-1125.github.io</organizationUrl>
-        </developer>
-    </developers>
-
-    <scm>
-        <connection>scm:git:git://github.com/simpligility/ossrh-demo.git</connection>
-        <developerConnection>scm:git:ssh://github.com:simpligility/ossrh-demo.git</developerConnection>
-        <url>http://github.com/simpligility/ossrh-demo/tree/master</url>
-    </scm>
-
     <parent>
         <groupId>io.github.easypaysingle</groupId>
         <artifactId>easypaysingle</artifactId>
         <version>1.0.0</version>
     </parent>
 
-    <groupId>io.github.hubao-1125</groupId>
-    <artifactId>easypaysingle.eps-common</artifactId>
+    <groupId>io.github.hubao-1125.easypaysingle</groupId>
+    <artifactId>eps-common</artifactId>
     <version>1.0.0</version>
     <name>${project.artifactId}</name>
     <description>eps base common jar</description>
@@ -45,6 +23,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>2.6.13</spring-boot.version>
+        <eps-parent.version>${eps.version}</eps-parent.version>
     </properties>
 
 
@@ -143,4 +122,25 @@
         </plugins>
     </build>
 
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>hubao</name>
+            <email>douhuhu1125@gmail.com</email>
+            <organization>Sonatype</organization>
+            <organizationUrl>hubao-1125.github.io</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/simpligility/ossrh-demo.git</connection>
+        <developerConnection>scm:git:ssh://github.com:simpligility/ossrh-demo.git</developerConnection>
+        <url>http://github.com/simpligility/ossrh-demo/tree/master</url>
+    </scm>
 </project>
