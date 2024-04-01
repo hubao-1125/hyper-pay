@@ -1,7 +1,7 @@
 package io.github.easypaysingle.service.service;
 
 import io.github.easypaysingle.common.model.vo.request.pay.PayRequestVO;
-import io.github.easypaysingle.common.model.vo.response.pay.PayResponseVO;
+import io.github.easypaysingle.common.model.vo.response.ResponseVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
@@ -20,7 +20,7 @@ public class PayFactory {
     private ApplicationContext applicationContext;
 
 
-    public PayResponseVO pay(PayRequestVO payRequestVO) {
+    public ResponseVO pay(PayRequestVO payRequestVO) {
 
 
         return null;

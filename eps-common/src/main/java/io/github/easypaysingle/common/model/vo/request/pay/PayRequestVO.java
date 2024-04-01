@@ -3,6 +3,7 @@ package io.github.easypaysingle.common.model.vo.request.pay;
 import io.github.easypaysingle.common.model.vo.request.PayRequestCommonVO;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
@@ -13,6 +14,7 @@ import java.io.Serializable;
  * @author hubao
  * @since 2024/3/28 15:45
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 @SuperBuilder
 public class PayRequestVO extends PayRequestCommonVO implements Serializable {

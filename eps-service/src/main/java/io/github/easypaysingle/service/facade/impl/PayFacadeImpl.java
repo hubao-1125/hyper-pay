@@ -2,7 +2,7 @@ package io.github.easypaysingle.service.facade.impl;
 
 import io.github.easypaysingle.common.facade.PayFacade;
 import io.github.easypaysingle.common.model.vo.request.pay.PayRequestVO;
-import io.github.easypaysingle.common.model.vo.response.pay.PayResponseVO;
+import io.github.easypaysingle.common.model.vo.response.ResponseVO;
 import io.github.easypaysingle.service.service.PayFactory;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ public class PayFacadeImpl implements PayFacade {
     private PayFactory payFactory;
 
     @Override
-    public PayResponseVO pay(PayRequestVO payRequestVO) {
+    public ResponseVO pay(PayRequestVO payRequestVO) {
         return payFactory.pay(payRequestVO);
     }
 

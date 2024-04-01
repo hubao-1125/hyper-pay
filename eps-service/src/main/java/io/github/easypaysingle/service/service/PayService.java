@@ -1,7 +1,7 @@
 package io.github.easypaysingle.service.service;
 
 import io.github.easypaysingle.common.model.vo.request.pay.PayRequestVO;
-import io.github.easypaysingle.common.model.vo.response.pay.PayResponseVO;
+import io.github.easypaysingle.common.model.vo.response.ResponseVO;
 
 /**
  * 功能描述: 支付统一-接口
@@ -15,5 +15,5 @@ public interface PayService {
      * @param payRequestVO
      * @return
      */
-    PayResponseVO pay(PayRequestVO payRequestVO);
+    ResponseVO pay(PayRequestVO payRequestVO);
 }

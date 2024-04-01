@@ -11,4 +11,14 @@ import lombok.Getter;
  */
 @Getter
 public enum ResponseErrorCodeEnum {
+
+    ;
+
+    private String errorCode;
+    private String errorMsg;
+
+    ResponseErrorCodeEnum(String errorCode, String errorMsg) {
+        this.errorCode = errorCode;
+        this.errorMsg = errorMsg;
+    }
 }

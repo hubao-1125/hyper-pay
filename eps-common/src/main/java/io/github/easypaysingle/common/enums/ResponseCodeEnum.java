@@ -12,10 +12,54 @@ import lombok.Getter;
 @Getter
 public enum ResponseCodeEnum {
 
+
+    /*
+    *
+    * =======支付
+    * 支付成功
+    * 支付中
+    * 支付失败
+    *
+    * =======参数
+    * 参数错误
+    *
+    * =======查询
+    * 查询失败
+    *
+    * =======退款
+    * 退款成功
+    * 退款中
+    * 退款失败
+    *
+    * =======撤单
+    * 撤单成功
+    * 撤单中
+    * 撤单失败
+    *
+    *
+    * */
+
+    SUCCESS("SUCCESS", "成功"),
+    PROCESSING("PROCESSING", "处理中"),
+    FAIL("FAIL", "失败"),
+
+    PARAM_ERROR("PARAM_ERROR", "参数错误"),
+    CONFIG_ERROR("CONFIG_ERROR", "配置错误"),
+
+    QUERY_FAIL("000004", "查询失败"),
+
+    REFUND_SUCCESS("000005", "退款成功"),
+    REFUND_PAYING("000006", "退款中"),
+    REFUND_FAIL("000007", "退款失败"),
+
+    CANCEL_SUCCESS("000008", "撤单成功")
     ;
 
-    private String code;
-    private String msg;
+    private final String code;
+    private final String msg;
 
-
+    ResponseCodeEnum(String code, String msg) {
+        this.code = code;
+        this.msg = msg;
+    }
 }
