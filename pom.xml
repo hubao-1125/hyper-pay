@@ -22,6 +22,7 @@
         <eps.version>1.0.0</eps.version>
         <lombok.version>1.18.30</lombok.version>
         <mybatis-plus-springboot.version>3.5.0</mybatis-plus-springboot.version>
+        <dubbo.version>3.2.0-beta.4</dubbo.version>
     </properties>
 
     <modules>
@@ -47,6 +48,22 @@
                 <version>${spring-boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <!-- Dubbo -->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-bom</artifactId>
+                <version>${dubbo.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-dependencies-zookeeper-curator5</artifactId>
+                <version>${dubbo.version}</version>
+                <type>pom</type>
             </dependency>
         </dependencies>
     </dependencyManagement>
