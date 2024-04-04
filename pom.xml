@@ -13,9 +13,10 @@
 
     <groupId>io.github.easypaysingle</groupId>
     <artifactId>easypaysingle</artifactId>
-    <version>1.0.0</version>
+    <version>${revision}</version>
 
     <properties>
+        <revision>1.0.0</revision>
         <eps.version>1.0.0</eps.version>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -42,12 +43,12 @@
             <dependency>
                 <groupId>io.github.hubao-1125.easypaysingle</groupId>
                 <artifactId>eps-common</artifactId>
-                <version>${eps.version}</version>
+                <version>${revision}</version>
             </dependency>
             <dependency>
                 <groupId>io.github.easypaysingle</groupId>
                 <artifactId>eps-core</artifactId>
-                <version>${eps.version}</version>
+                <version>${revision}</version>
             </dependency>
 
             <dependency>
@@ -83,5 +84,35 @@
 
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+                <version>1.5.0</version>
+                <configuration>
+                    <updatePomFile>true</updatePomFile>
+                    <flattenMode>oss</flattenMode>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>flatten</id>
+                        <goals>
+                            <goal>flatten</goal>
+                        </goals>
+                        <phase>process-resources</phase>
+                    </execution>
+                    <execution>
+                        <id>flatten.clean</id>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                        <phase>clean</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

@@ -8,11 +8,10 @@
     <parent>
         <groupId>io.github.easypaysingle</groupId>
         <artifactId>easypaysingle</artifactId>
-        <version>1.0.0</version>
+        <version>${revision}</version>
     </parent>
 
     <artifactId>eps-core</artifactId>
-    <version>${eps.version}</version>
 
 
     <properties>

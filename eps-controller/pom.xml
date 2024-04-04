@@ -8,11 +8,11 @@
     <parent>
         <groupId>io.github.easypaysingle</groupId>
         <artifactId>easypaysingle</artifactId>
-        <version>1.0.0</version>
+        <version>${revision}</version>
     </parent>
 
     <artifactId>eps-controller</artifactId>
-    <version>${eps.version}</version>
+    <version>${revision}</version>
 
     <properties>
         <java.version>1.8</java.version>
@@ -33,13 +33,13 @@
             <artifactId>lombok</artifactId>
             <version>1.18.22</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-dependencies</artifactId>
-            <version>${spring-boot.version}</version>
-            <type>pom</type>
-            <scope>import</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-dependencies</artifactId>-->
+<!--            <version>${spring-boot.version}</version>-->
+<!--            <type>pom</type>-->
+<!--            <scope>import</scope>-->
+<!--        </dependency>-->
 
         <!-- dubbo -->
         <dependency>

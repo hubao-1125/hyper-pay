@@ -8,12 +8,12 @@
     <parent>
         <groupId>io.github.easypaysingle</groupId>
         <artifactId>easypaysingle</artifactId>
-        <version>1.0.0</version>
+        <version>${revision}</version>
     </parent>
 
     <groupId>io.github.hubao-1125.easypaysingle</groupId>
     <artifactId>eps-common</artifactId>
-    <version>1.0.0</version>
+    <version>${revision}</version>
     <name>${project.artifactId}</name>
     <description>eps base common jar</description>
     <url>hubao-1125.github.io</url>

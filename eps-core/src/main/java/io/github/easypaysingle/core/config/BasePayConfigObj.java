@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
 
@@ -14,9 +15,7 @@ import java.io.Serializable;
  * @since 2024/4/1$ 15:56$
  */
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
+@SuperBuilder
 public class BasePayConfigObj implements Serializable {
 
     /**

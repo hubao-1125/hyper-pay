@@ -2,10 +2,7 @@ package io.github.easypaysingle.common.model.vo.response;
 
 import io.github.easypaysingle.common.enums.ResponseCodeEnum;
 import io.github.easypaysingle.common.enums.ResponseErrorCodeEnum;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
@@ -18,7 +15,6 @@ import java.io.Serializable;
  */
 @Data
 @SuperBuilder
-@NoArgsConstructor
 public class ResponseCommonVO implements Serializable {
 
     // 返回信息↓
@@ -80,4 +76,5 @@ public class ResponseCommonVO implements Serializable {
      * 撤销订单号
      */
     protected String cancelOrderNumber;
+
 }

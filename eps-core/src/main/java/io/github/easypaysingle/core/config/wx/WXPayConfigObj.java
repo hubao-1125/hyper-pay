@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
 
@@ -15,8 +16,6 @@ import java.io.Serializable;
  * @since 2024/4/1$ 15:55$
  */
 @Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
+@SuperBuilder
 public class WXPayConfigObj extends BasePayConfigObj implements Serializable {
 }
