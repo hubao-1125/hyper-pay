@@ -1,4 +1,4 @@
-# easy-pay-single
+# hyper-pay
 简单支付
 
 
