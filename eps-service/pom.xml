@@ -26,7 +26,7 @@
         <!--        二方库-->
         <dependency>
             <groupId>io.github.hubao-1125.easypaysingle</groupId>
-            <artifactId>eps-common</artifactId>
+            <artifactId>hyper-common</artifactId>
         </dependency>
         <dependency>
             <groupId>io.github.easypaysingle</groupId>

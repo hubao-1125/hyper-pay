@@ -28,7 +28,7 @@
     </properties>
 
     <modules>
-        <module>eps-common</module>
+        <module>hyper-common</module>
         <module>eps-controller</module>
         <module>eps-core</module>
         <module>eps-demo</module>
@@ -42,7 +42,7 @@
             <!--      自己的库      -->
             <dependency>
                 <groupId>io.github.hubao-1125.easypaysingle</groupId>
-                <artifactId>eps-common</artifactId>
+                <artifactId>hyper-common</artifactId>
                 <version>${revision}</version>
             </dependency>
             <dependency>
