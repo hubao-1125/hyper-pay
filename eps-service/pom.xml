@@ -30,7 +30,7 @@
         </dependency>
         <dependency>
             <groupId>io.github.easypaysingle</groupId>
-            <artifactId>eps-core</artifactId>
+            <artifactId>hyper-core</artifactId>
         </dependency>
 
 

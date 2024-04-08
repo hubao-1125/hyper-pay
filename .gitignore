@@ -39,3 +39,10 @@ build/
 /eps-sdk/.flattened-pom.xml
 /eps-service/.flattened-pom.xml
 /.flattened-pom.xml
+
+/hyper-common/.flattened-pom.xml
+/hyper-controller/.flattened-pom.xml
+/hyper-core/.flattened-pom.xml
+/hyper-demo/.flattened-pom.xml
+/hyper-sdk/.flattened-pom.xml
+/hyper-service/.flattened-pom.xml

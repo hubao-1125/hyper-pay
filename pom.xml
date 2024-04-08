@@ -30,7 +30,7 @@
     <modules>
         <module>hyper-common</module>
         <module>eps-controller</module>
-        <module>eps-core</module>
+        <module>hyper-core</module>
         <module>eps-demo</module>
         <module>eps-sdk</module>
         <module>eps-service</module>
@@ -47,7 +47,7 @@
             </dependency>
             <dependency>
                 <groupId>io.github.easypaysingle</groupId>
-                <artifactId>eps-core</artifactId>
+                <artifactId>hyper-core</artifactId>
                 <version>${revision}</version>
             </dependency>
 
