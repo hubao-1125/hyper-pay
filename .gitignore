@@ -18,6 +18,7 @@ target/
 *.iws
 *.iml
 *.ipr
+.flattened
 
 ### NetBeans ###
 /nbproject/private/
@@ -31,3 +32,10 @@ build/
 
 ### VS Code ###
 .vscode/
+/eps-common/.flattened-pom.xml
+/eps-controller/.flattened-pom.xml
+/eps-core/.flattened-pom.xml
+/eps-demo/.flattened-pom.xml
+/eps-sdk/.flattened-pom.xml
+/eps-service/.flattened-pom.xml
+/.flattened-pom.xml
