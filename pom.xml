@@ -29,7 +29,7 @@
 
     <modules>
         <module>hyper-common</module>
-        <module>eps-controller</module>
+        <module>hyper-controller</module>
         <module>hyper-core</module>
         <module>eps-demo</module>
         <module>eps-sdk</module>

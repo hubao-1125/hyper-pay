@@ -11,7 +11,7 @@
         <version>${revision}</version>
     </parent>
 
-    <artifactId>eps-core</artifactId>
+    <artifactId>hyper-core</artifactId>
 
 
     <properties>
