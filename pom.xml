@@ -31,7 +31,7 @@
         <module>hyper-common</module>
         <module>hyper-controller</module>
         <module>hyper-core</module>
-        <module>eps-demo</module>
+        <module>hyper-demo</module>
         <module>eps-sdk</module>
         <module>eps-service</module>
     </modules>
