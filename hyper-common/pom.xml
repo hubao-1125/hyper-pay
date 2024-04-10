@@ -6,16 +6,16 @@
     <packaging>jar</packaging>
 
     <parent>
-        <groupId>io.github.easypaysingle</groupId>
-        <artifactId>easypaysingle</artifactId>
+        <groupId>io.github.hyperpay</groupId>
+        <artifactId>hyper-pay</artifactId>
         <version>${revision}</version>
     </parent>
 
-    <groupId>io.github.hubao-1125.easypaysingle</groupId>
+    <groupId>io.github.hubao-1125.hyperpay</groupId>
     <artifactId>hyper-common</artifactId>
     <version>${revision}</version>
     <name>${project.artifactId}</name>
-    <description>eps base common jar</description>
+    <description>hyper base common jar</description>
     <url>hubao-1125.github.io</url>
 
     <properties>

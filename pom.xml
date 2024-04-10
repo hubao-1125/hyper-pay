@@ -11,17 +11,15 @@
         <version>2.6.13</version>
     </parent>
 
-    <groupId>io.github.easypaysingle</groupId>
-    <artifactId>easypaysingle</artifactId>
+    <groupId>io.github.hyperpay</groupId>
+    <artifactId>hyper-pay</artifactId>
     <version>${revision}</version>
 
     <properties>
         <revision>1.0.0</revision>
-        <eps.version>1.0.0</eps.version>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring-boot.version>2.6.13</spring-boot.version>
-
         <lombok.version>1.18.30</lombok.version>
         <mybatis-plus-springboot.version>3.5.0</mybatis-plus-springboot.version>
         <dubbo.version>3.2.0-beta.4</dubbo.version>
@@ -32,8 +30,8 @@
         <module>hyper-controller</module>
         <module>hyper-core</module>
         <module>hyper-demo</module>
-        <module>eps-sdk</module>
-        <module>eps-service</module>
+        <module>hyper-sdk</module>
+        <module>hyper-service</module>
     </modules>
 
     <dependencyManagement>
@@ -41,12 +39,12 @@
 
             <!--      自己的库      -->
             <dependency>
-                <groupId>io.github.hubao-1125.easypaysingle</groupId>
+                <groupId>io.github.hubao-1125.hyperpay</groupId>
                 <artifactId>hyper-common</artifactId>
                 <version>${revision}</version>
             </dependency>
             <dependency>
-                <groupId>io.github.easypaysingle</groupId>
+                <groupId>io.github.hyperpay</groupId>
                 <artifactId>hyper-core</artifactId>
                 <version>${revision}</version>
             </dependency>

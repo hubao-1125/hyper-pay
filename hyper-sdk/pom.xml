@@ -6,12 +6,12 @@
     <packaging>pom</packaging>
 
     <parent>
-        <groupId>io.github.easypaysingle</groupId>
-        <artifactId>easypaysingle</artifactId>
+        <groupId>io.github.hyperpay</groupId>
+        <artifactId>hyper-pay</artifactId>
         <version>${revision}</version>
     </parent>
 
-    <artifactId>eps-sdk</artifactId>
+    <artifactId>hyper-sdk</artifactId>
     <version>${revision}</version>
 
     <properties>
