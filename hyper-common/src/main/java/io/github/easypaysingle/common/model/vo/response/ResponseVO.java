@@ -26,7 +26,7 @@ public class ResponseVO extends ResponseCommonVO implements Serializable {
      */
     private WXPayResponseVO wxPayResponseVO;
 
-    public ResponseVO
+
 
 //    public ResponseVO(WXPayResponseVO wxPayResponseVO) {
 //        this.wxPayResponseVO = wxPayResponseVO;

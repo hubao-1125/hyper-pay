@@ -42,17 +42,8 @@ public enum ResponseCodeEnum {
     SUCCESS("SUCCESS", "成功"),
     PROCESSING("PROCESSING", "处理中"),
     FAIL("FAIL", "失败"),
-
     PARAM_ERROR("PARAM_ERROR", "参数错误"),
-    CONFIG_ERROR("CONFIG_ERROR", "配置错误"),
-
-    QUERY_FAIL("000004", "查询失败"),
-
-    REFUND_SUCCESS("000005", "退款成功"),
-    REFUND_PAYING("000006", "退款中"),
-    REFUND_FAIL("000007", "退款失败"),
-
-    CANCEL_SUCCESS("000008", "撤单成功")
+    CONFIG_ERROR("CONFIG_ERROR", "配置错误")
     ;
 
     private final String code;

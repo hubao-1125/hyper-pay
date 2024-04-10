@@ -76,9 +76,9 @@ public class WeChatReverseRecordsPO {
      * Column: refund_status
      * Type: BIT
      * Default value: 0
-     * Remark: 退款状态 默认 0 退款中 1退款成功
+     * Remark: 逆向状态 默认 0 处理中 1处理成功
      */
-    private Boolean refundStatus;
+    private Boolean reverseStatus;
 
     /**
      * Column: refund_amount
