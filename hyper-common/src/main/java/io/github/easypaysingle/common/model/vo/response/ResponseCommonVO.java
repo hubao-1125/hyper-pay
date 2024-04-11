@@ -29,11 +29,6 @@ public class ResponseCommonVO implements Serializable {
     protected String msg;
 
     /**
-     * 返回码枚举
-     */
-    protected ResponseCodeEnum responseCodeEnum;
-
-    /**
      * 错误码
      */
     protected String errorCode;
@@ -42,12 +37,6 @@ public class ResponseCommonVO implements Serializable {
      * 错误信息
      */
     protected String errorMsg;
-
-    /**
-     * 错误码枚举
-     */
-    protected ResponseErrorCodeEnum responseErrorCodeEnum;
-
 
     // 支付参数↓
     /**
