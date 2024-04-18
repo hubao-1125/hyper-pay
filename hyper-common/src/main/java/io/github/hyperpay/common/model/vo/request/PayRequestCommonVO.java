@@ -1,11 +1,8 @@
-package io.github.easypaysingle.common.model.vo.request;
+package io.github.hyperpay.common.model.vo.request;
 
-import io.github.easypaysingle.common.enums.PayTerminalEnum;
-import io.github.easypaysingle.common.enums.PaywayEnum;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
+import io.github.hyperpay.common.enums.PayTerminalEnum;
+import io.github.hyperpay.common.enums.PaywayEnum;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;

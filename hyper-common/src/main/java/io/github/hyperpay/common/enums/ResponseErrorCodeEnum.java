@@ -1,6 +1,5 @@
-package io.github.easypaysingle.common.enums;
+package io.github.hyperpay.common.enums;
 
-import lombok.Data;
 import lombok.Getter;
 
 /**
@@ -12,13 +11,19 @@ import lombok.Getter;
 @Getter
 public enum ResponseErrorCodeEnum {
 
+
+    SYSTEM_ERROR("SYSTEM_ERROR", "系统错误"),
+    THIRD_ERROR("THIRD_ERROR", "三方错误")
+
+
     ;
 
-    private String errorCode;
-    private String errorMsg;
+    private final String errorCode;
+    private final String errorMsg;
 
     ResponseErrorCodeEnum(String errorCode, String errorMsg) {
         this.errorCode = errorCode;
         this.errorMsg = errorMsg;
     }
+
 }

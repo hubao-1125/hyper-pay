@@ -1,4 +1,4 @@
-package io.github.easypaysingle.common.model.vo.request.pay;
+package io.github.hyperpay.common.model.vo.request.pay;
 
 import lombok.Builder;
 import lombok.Data;

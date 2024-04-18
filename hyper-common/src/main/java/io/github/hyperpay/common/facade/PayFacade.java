@@ -1,7 +1,7 @@
-package io.github.easypaysingle.common.facade;
+package io.github.hyperpay.common.facade;
 
-import io.github.easypaysingle.common.model.vo.request.pay.PayRequestVO;
-import io.github.easypaysingle.common.model.vo.response.ResponseVO;
+import io.github.hyperpay.common.model.vo.request.pay.PayRequestVO;
+import io.github.hyperpay.common.model.vo.response.ResponseVO;
 
 /**
  * 功能描述: 支付-接口

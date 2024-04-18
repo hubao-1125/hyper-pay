@@ -1,7 +1,5 @@
-package io.github.easypaysingle.common.model.vo.response;
+package io.github.hyperpay.common.model.vo.response;
 
-import io.github.easypaysingle.common.enums.ResponseCodeEnum;
-import io.github.easypaysingle.common.enums.ResponseErrorCodeEnum;
 import lombok.Data;
 import lombok.experimental.SuperBuilder;
 

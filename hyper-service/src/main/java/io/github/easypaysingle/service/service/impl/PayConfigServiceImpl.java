@@ -1,7 +1,7 @@
 package io.github.easypaysingle.service.service.impl;
 
-import io.github.easypaysingle.common.enums.PayTerminalEnum;
-import io.github.easypaysingle.common.enums.PaywayEnum;
+import io.github.hyperpay.common.enums.PayTerminalEnum;
+import io.github.hyperpay.common.enums.PaywayEnum;
 import io.github.easypaysingle.service.mapper.ConfigParamMapper;
 import io.github.easypaysingle.service.model.po.ConfigParamPO;
 import io.github.easypaysingle.service.service.PayConfigService;

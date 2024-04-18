@@ -1,4 +1,4 @@
-package io.github.easypaysingle.common.enums;
+package io.github.hyperpay.common.enums;
 
 import lombok.Getter;
 
