@@ -23,6 +23,8 @@
         <lombok.version>1.18.22</lombok.version>
         <mybatis-plus-springboot.version>3.5.0</mybatis-plus-springboot.version>
         <dubbo.version>3.2.0-beta.4</dubbo.version>
+        <spring-data-redis.version>2.6.10</spring-data-redis.version>
+        <commons-collections.version>3.2.2</commons-collections.version>
     </properties>
 
     <modules>
@@ -79,7 +81,29 @@
                 <type>pom</type>
             </dependency>
 
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-redis</artifactId>
+                <version>${spring-data-redis.version}</version>
+            </dependency>
 
+            <dependency>
+                <groupId>io.lettuce</groupId>
+                <artifactId>lettuce-core</artifactId>
+                <version>${lettuce.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-collections</groupId>
+                <artifactId>commons-collections</artifactId>
+                <version>${commons-collections.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

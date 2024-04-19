@@ -1,10 +1,10 @@
-package io.github.easypaysingle.service.service.impl;
+package io.github.hyperpay.service.service.impl;
 
 import io.github.hyperpay.common.enums.PayTerminalEnum;
 import io.github.hyperpay.common.enums.PaywayEnum;
-import io.github.easypaysingle.service.mapper.ConfigParamMapper;
-import io.github.easypaysingle.service.model.po.ConfigParamPO;
-import io.github.easypaysingle.service.service.PayConfigService;
+import io.github.hyperpay.service.mapper.ConfigParamMapper;
+import io.github.hyperpay.service.model.po.ConfigParamPO;
+import io.github.hyperpay.service.service.PayConfigService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

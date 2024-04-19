@@ -1,8 +1,8 @@
-package io.github.easypaysingle.service.service.impl;
+package io.github.hyperpay.service.service.impl;
 
 import io.github.hyperpay.common.model.vo.request.pay.PayRequestVO;
 import io.github.hyperpay.common.model.vo.response.ResponseVO;
-import io.github.easypaysingle.service.service.PayService;
+import io.github.hyperpay.service.service.PayService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

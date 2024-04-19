@@ -1,7 +1,7 @@
-package io.github.easypaysingle.service.enums;
+package io.github.hyperpay.service.enums;
 
 import io.github.hyperpay.common.enums.PaywayEnum;
-import io.github.easypaysingle.service.service.impl.WXPayServiceImpl;
+import io.github.hyperpay.service.service.impl.WXPayServiceImpl;
 import lombok.Getter;
 
 /**

@@ -1,9 +1,9 @@
-package io.github.easypaysingle.service.mapper;
+package io.github.hyperpay.service.mapper;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import io.github.easypaysingle.service.model.po.ConfigParamPO;
+import io.github.hyperpay.service.model.po.ConfigParamPO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

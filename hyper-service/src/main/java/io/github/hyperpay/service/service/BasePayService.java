@@ -1,4 +1,4 @@
-package io.github.easypaysingle.service.service;
+package io.github.hyperpay.service.service;
 
 import io.github.hyperpay.common.enums.PayTerminalEnum;
 import io.github.hyperpay.common.enums.PaywayEnum;

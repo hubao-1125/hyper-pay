@@ -1,9 +1,6 @@
 package io.github.easypaysingle.core.config;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
@@ -12,7 +9,7 @@ import java.io.Serializable;
  * 功能描述: 基础支付配置obj-类
  *
  * @author hubao
- * @since 2024/4/1$ 15:56$
+ * @since 2024/4/1 15:56
  */
 @Data
 @SuperBuilder

@@ -1,4 +1,4 @@
-package io.github.easypaysingle.service.model.po;
+package io.github.hyperpay.service.model.po;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

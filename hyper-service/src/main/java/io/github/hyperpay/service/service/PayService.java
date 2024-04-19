@@ -1,4 +1,4 @@
-package io.github.easypaysingle.service.service;
+package io.github.hyperpay.service.service;
 
 import io.github.hyperpay.common.model.vo.request.pay.PayRequestVO;
 import io.github.hyperpay.common.model.vo.response.ResponseVO;

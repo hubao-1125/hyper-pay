@@ -1,9 +1,9 @@
-package io.github.easypaysingle.service.facade.impl;
+package io.github.hyperpay.service.facade.impl;
 
 import io.github.hyperpay.common.facade.PayFacade;
 import io.github.hyperpay.common.model.vo.request.pay.PayRequestVO;
 import io.github.hyperpay.common.model.vo.response.ResponseVO;
-import io.github.easypaysingle.service.service.PayFactory;
+import io.github.hyperpay.service.service.PayFactory;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.factory.annotation.Autowired;
 

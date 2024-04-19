@@ -1,4 +1,4 @@
-package io.github.easypaysingle.service.model.po;
+package io.github.hyperpay.service.model.po;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -10,15 +10,12 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * 功能描述: 系统参数字典表-类
- *
- * @author hubao
- * @since 2024/3/29$ 17:38$
+ * Table: p_config_param
  */
 @Data
 @Builder
-@TableName("p_system_param_dict")
-public class SystemParamDictPO implements Serializable {
+@TableName("p_config_param")
+public class ConfigParamPO implements Serializable {
     /**
      * Column: id
      * Type: BIGINT
@@ -48,6 +45,19 @@ public class SystemParamDictPO implements Serializable {
      */
     private String paramValue;
 
+    /**
+     * Column: payway_code
+     * Type: VARCHAR(32)
+     * Remark: 支付方式编码
+     */
+    private String paywayCode;
+
+    /**
+     * Column: pay_terminal_code
+     * Type: VARCHAR(32)
+     * Remark: 支付终端编码
+     */
+    private String payTerminalCode;
 
     /**
      * Column: is_delete
@@ -64,5 +74,6 @@ public class SystemParamDictPO implements Serializable {
      * Remark: 创建时间
      */
     private Date gmtCreate;
+
 
 }

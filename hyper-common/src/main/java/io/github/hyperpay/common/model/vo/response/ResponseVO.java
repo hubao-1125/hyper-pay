@@ -1,6 +1,5 @@
 package io.github.hyperpay.common.model.vo.response;
 
-import io.github.hyperpay.common.enums.ParamErrorEnum;
 import io.github.hyperpay.common.enums.ResponseCodeEnum;
 import io.github.hyperpay.common.enums.ResponseErrorCodeEnum;
 import io.github.hyperpay.common.enums.config.WXPayConfigCheckResponseEnum;
@@ -59,27 +58,27 @@ public class ResponseVO extends ResponseCommonVO implements Serializable {
                 .errorCode(errorCode).errorMsg(errorMsg);
     }
 
-    private static ResponseVOBuilder success() {
+    public static ResponseVOBuilder success() {
         return createBuilder(ResponseCodeEnum.SUCCESS);
     }
 
-    private static ResponseVOBuilder fail() {
+    public static ResponseVOBuilder fail() {
         return createBuilder(ResponseCodeEnum.FAIL);
     }
 
-    private static ResponseVOBuilder fail(ResponseErrorCodeEnum responseErrorCodeEnum) {
+    public static ResponseVOBuilder fail(ResponseErrorCodeEnum responseErrorCodeEnum) {
         return createBuilder(ResponseCodeEnum.FAIL, responseErrorCodeEnum);
     }
 
-    private static ResponseVOBuilder processing() {
+    public static ResponseVOBuilder processing() {
         return createBuilder(ResponseCodeEnum.PROCESSING);
     }
 
-    private static ResponseVOBuilder wxConfigError(WXPayConfigCheckResponseEnum wxPayConfigCheckResponseEnum) {
+    public static ResponseVOBuilder wxConfigError(WXPayConfigCheckResponseEnum wxPayConfigCheckResponseEnum) {
         return createBuilder(ResponseCodeEnum.CONFIG_ERROR, wxPayConfigCheckResponseEnum);
     }
 
-    private static ResponseVOBuilder paramError(ParamErrorEnum paramErrorEnum) {
-        return createBuilder(ResponseCodeEnum.PARAM_ERROR, paramErrorEnum);
+    public static ResponseVOBuilder paramError(ResponseErrorCodeEnum responseErrorCodeEnum) {
+        return createBuilder(ResponseCodeEnum.PARAM_ERROR, responseErrorCodeEnum);
     }
 }

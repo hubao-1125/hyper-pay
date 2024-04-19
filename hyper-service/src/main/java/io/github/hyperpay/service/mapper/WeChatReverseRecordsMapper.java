@@ -1,7 +1,7 @@
-package io.github.easypaysingle.service.mapper;
+package io.github.hyperpay.service.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import io.github.easypaysingle.service.model.po.WeChatReverseRecordsPO;
+import io.github.hyperpay.service.model.po.WeChatReverseRecordsPO;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

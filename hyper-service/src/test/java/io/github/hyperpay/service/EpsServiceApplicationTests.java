@@ -1,4 +1,4 @@
-package io.github.easypaysingle.service;
+package io.github.hyperpay.service;
 
 class EpsServiceApplicationTests {
 

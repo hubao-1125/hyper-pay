@@ -13,7 +13,8 @@ public enum ResponseErrorCodeEnum {
 
 
     SYSTEM_ERROR("SYSTEM_ERROR", "系统错误"),
-    THIRD_ERROR("THIRD_ERROR", "三方错误")
+    THIRD_ERROR("THIRD_ERROR", "三方错误"),
+    IP_INVALID("", "")
 
 
     ;
