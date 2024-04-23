@@ -54,7 +54,7 @@ public class PayRequestCommonVO implements Serializable {
     private String mainFlowOrderNumber;
 
     /**
-     * 支付金额
+     * 支付金额 精确到小数点后2位
      */
     private BigDecimal amount;
 
