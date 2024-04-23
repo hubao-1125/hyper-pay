@@ -30,7 +30,10 @@ public enum ResponseErrorCodeEnum {
     GOODS_BODY_IS_NULL("GOODS_BODY_IS_NULL", "商品名称不可以为空"),
     GOODS_BODY_LENGTH_ERROR("GOODS_BODY_LENGTH_ERROR", "商品名称长度错误"),
     TIME_EXPIRE_IS_NULL("TIME_EXPIRE_IS_NULL", "支付超时时间不可以为空"),
-    TIME_EXPIRE_FORMAT_ERROR("TIME_EXPIRE_FORMAT_ERROR", "支付超时时间格式错误")
+    TIME_EXPIRE_FORMAT_ERROR("TIME_EXPIRE_FORMAT_ERROR", "支付超时时间格式错误"),
+    PAY_AUTH_CODE_IS_NULL("PAY_AUTH_CODE_IS_NULL", "付款码不可以为空"),
+    WX_PAY_REQUEST_VO_IS_NULL("WX_PAY_REQUEST_VO_IS_NULL", "微信支付请求参数不可以为空"),
+    WX_OPEN_ID_IS_NULL("WX_OPEN_ID_IS_NULL", "openid不可以为空")
 
     ;
 
