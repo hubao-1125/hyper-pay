@@ -1,15 +1,14 @@
 package io.github.hyperpay.service.service.impl;
 
+import io.github.easypaysingle.core.config.BasePayConfigObj;
 import io.github.hyperpay.common.enums.PayTerminalEnum;
 import io.github.hyperpay.common.enums.ResponseErrorCodeEnum;
 import io.github.hyperpay.common.model.vo.request.pay.PayRequestVO;
 import io.github.hyperpay.common.model.vo.request.pay.WXPayRequestVO;
 import io.github.hyperpay.common.model.vo.response.ResponseVO;
-import io.github.hyperpay.service.service.PayConfigService;
 import io.github.hyperpay.service.service.PayService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Objects;
@@ -25,21 +24,17 @@ import java.util.Objects;
 public class WXPayServiceImpl implements PayService {
 
 
-    @Autowired
-    private PayConfigService payConfigService;
+
 
 
     @Override
-    public ResponseVO pay(PayRequestVO payRequestVO) {
+    public ResponseVO pay(PayRequestVO payRequestVO, BasePayConfigObj payConfigObj) {
 
         // 校验微信支付参数
         ResponseErrorCodeEnum responseErrorCodeEnum = checkPayParam(payRequestVO);
         if (!Objects.isNull(responseErrorCodeEnum)) {
             return ResponseVO.paramError(responseErrorCodeEnum).build();
         }
-
-        // 校验一下从数据库得到的支付配置
-
 
         // 调用client支付
 

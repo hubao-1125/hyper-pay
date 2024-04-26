@@ -1,5 +1,6 @@
 package io.github.hyperpay.service.service;
 
+import io.github.easypaysingle.core.config.BasePayConfigObj;
 import io.github.hyperpay.common.enums.ResponseErrorCodeEnum;
 import io.github.hyperpay.common.model.vo.request.pay.PayRequestVO;
 import io.github.hyperpay.common.model.vo.response.ResponseVO;
@@ -31,6 +32,9 @@ public class PayFactory {
     @Autowired
     private LettuceRedisClient lettuceRedisClient;
 
+    @Autowired
+    private PayConfigService payConfigService;
+
 
     public ResponseVO pay(PayRequestVO payRequestVO) {
 
@@ -45,8 +49,10 @@ public class PayFactory {
             // 获取支付服务类
             Class<?> clazz = payServiceEnum.getClazz();
             PayService payService = (PayService) applicationContext.getBean(clazz);
+            // 校验一下从数据库得到的支付配置
+
             // 调用支付服务
-            return payService.pay(payRequestVO);
+            return payService.pay(payRequestVO, BasePayConfigObj.builder().build());
         } catch (Exception e) {
             log.info("pay exception ", e);
             return ResponseVO.fail(ResponseErrorCodeEnum.SYSTEM_ERROR).build();
