@@ -9,6 +9,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * 功能描述: 支付返回-类
@@ -74,8 +75,8 @@ public class ResponseVO extends ResponseCommonVO implements Serializable {
         return createBuilder(ResponseCodeEnum.PROCESSING);
     }
 
-    public static ResponseVOBuilder wxConfigError(WXPayConfigCheckResponseEnum wxPayConfigCheckResponseEnum) {
-        return createBuilder(ResponseCodeEnum.CONFIG_ERROR, wxPayConfigCheckResponseEnum);
+    public static ResponseVOBuilder configError(Object configCheckResponseEnum) {
+        return createBuilder(ResponseCodeEnum.CONFIG_ERROR, configCheckResponseEnum);
     }
 
     public static ResponseVOBuilder paramError(ResponseErrorCodeEnum responseErrorCodeEnum) {

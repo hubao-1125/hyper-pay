@@ -9,11 +9,11 @@ package io.github.easypaysingle.core.config.wx;
 public class WXPayConfigField {
 
     public static final String APPID = "appid";
-    public static final String MERCHANT_ID = "mch_id";
+    public static final String MCH_ID = "mch_id";
     public static final String SUB_APP_ID = "sub_appid";
     public static final String SUB_MCH_ID = "sub_mch_id";
     public static final String PARTNER_KEY = "partner_key";
-    public static final String REFUND_CERT_PATH = "refund_cert_path";
-    public static final String NOTIFY_URL = "notify_url";
+    public static final String CERT_PATH = "cert_path";
+
 
 }

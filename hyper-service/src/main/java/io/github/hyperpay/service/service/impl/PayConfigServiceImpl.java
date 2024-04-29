@@ -5,12 +5,14 @@ import io.github.hyperpay.common.enums.PaywayEnum;
 import io.github.hyperpay.service.mapper.ConfigParamMapper;
 import io.github.hyperpay.service.model.po.ConfigParamPO;
 import io.github.hyperpay.service.service.PayConfigService;
+import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * 功能描述: -类
@@ -34,10 +36,11 @@ public class PayConfigServiceImpl implements PayConfigService {
 
         List<ConfigParamPO> configParamPOList = configParamMapper.selectList(ConfigParamPO.builder()
                 .paywayCode(paywayEnum.getCode()).payTerminalCode(payTerminalEnum.getUpperCode()).build());
+        if (CollectionUtils.isEmpty(configParamPOList)) {
+            return null;
+        }
 
-
-
-        return null;
+        return configParamPOList.stream().collect(Collectors.toMap(ConfigParamPO::getParamKey, ConfigParamPO::getParamValue));
     }
 
 }

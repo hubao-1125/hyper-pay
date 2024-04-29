@@ -1,7 +1,11 @@
 package io.github.hyperpay.service.service;
 
 import io.github.easypaysingle.core.config.BasePayConfigObj;
+import io.github.easypaysingle.core.config.wx.WXPayConfigObj;
+import io.github.hyperpay.common.enums.PayTerminalEnum;
+import io.github.hyperpay.common.enums.PaywayEnum;
 import io.github.hyperpay.common.enums.ResponseErrorCodeEnum;
+import io.github.hyperpay.common.enums.config.WXPayConfigCheckResponseEnum;
 import io.github.hyperpay.common.model.vo.request.pay.PayRequestVO;
 import io.github.hyperpay.common.model.vo.response.ResponseVO;
 import io.github.hyperpay.service.core.LettuceRedisClient;
@@ -12,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
+import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -50,9 +55,18 @@ public class PayFactory {
             Class<?> clazz = payServiceEnum.getClazz();
             PayService payService = (PayService) applicationContext.getBean(clazz);
             // 校验一下从数据库得到的支付配置
+            BasePayConfigObj basePayConfigObj = castConfigObj(payRequestVO);
+            if (Objects.isNull(basePayConfigObj)) {
+                return null;
+            }
+
+            Object payErrorEnumObj = checkPayConfigObj(basePayConfigObj, payRequestVO);
+            if (!Objects.isNull(payErrorEnumObj)) {
+                return ResponseVO.configError(payErrorEnumObj).build();
+            }
 
             // 调用支付服务
-            return payService.pay(payRequestVO, BasePayConfigObj.builder().build());
+            return payService.pay(payRequestVO, basePayConfigObj);
         } catch (Exception e) {
             log.info("pay exception ", e);
             return ResponseVO.fail(ResponseErrorCodeEnum.SYSTEM_ERROR).build();
@@ -61,6 +75,59 @@ public class PayFactory {
             String key = payRequestVO.getMainOrderNumber() + ":" + payRequestVO.getMainFlowOrderNumber();
             lettuceRedisClient.releaseKey(key, val);
         }
+    }
+
+    private Object checkPayConfigObj(BasePayConfigObj basePayConfigObj, PayRequestVO payRequestVO) {
+
+        if (basePayConfigObj instanceof WXPayConfigObj) {
+            return (Object)checkWXPayConfigObj((WXPayConfigObj) basePayConfigObj, payRequestVO.getPayTerminalEnum());
+        }
+
+        return null;
+    }
+
+    private WXPayConfigCheckResponseEnum checkWXPayConfigObj(WXPayConfigObj basePayConfigObj, PayTerminalEnum payTerminalEnum) {
+
+        if (StringUtils.isBlank(basePayConfigObj.getAppId())) {
+            return WXPayConfigCheckResponseEnum.APPID_IS_NULL;
+        }
+
+        if (StringUtils.isBlank(basePayConfigObj.getMchId())) {
+            return WXPayConfigCheckResponseEnum.MCH_ID_IS_NULL;
+        }
+
+        if (StringUtils.isBlank(basePayConfigObj.getPartnerKey())) {
+            return WXPayConfigCheckResponseEnum.PARTNER_KEY_IS_NULL;
+        }
+
+        if (StringUtils.isBlank(basePayConfigObj.getCertPath())) {
+            return WXPayConfigCheckResponseEnum.CERT_PATH_IS_NULL;
+        }
+
+        if (PayTerminalEnum.MICRO_PAY != payTerminalEnum) {
+            if (StringUtils.isBlank(basePayConfigObj.getNotifyURL())) {
+                return WXPayConfigCheckResponseEnum.NOTIFY_URL_IS_NULL;
+            }
+        }
+
+        return null;
+    }
+
+    private BasePayConfigObj castConfigObj(PayRequestVO payRequestVO) {
+
+        Map<String, String> configParamMap = payConfigService.getPayConfig(payRequestVO.getPaywayEnum(), payRequestVO.getPayTerminalEnum());
+        if (Objects.isNull(configParamMap)) {
+            return null;
+        }
+
+        PaywayEnum paywayEnum = payRequestVO.getPaywayEnum();
+        switch (paywayEnum) {
+            case WXPAY:
+                return WXPayConfigObj.getConfig(configParamMap);
+            default:
+                return null;
+        }
+
     }
 
     private ResponseErrorCodeEnum checkBasePayParam(PayRequestVO reqVO, String val) {

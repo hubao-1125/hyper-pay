@@ -14,8 +14,9 @@ public interface ConfigParamMapper extends BaseMapper<ConfigParamPO> {
     default List<ConfigParamPO> selectList(ConfigParamPO configParamPO){
         LambdaQueryWrapper<ConfigParamPO> queryWrapper = new QueryWrapper<ConfigParamPO>().lambda()
                 .eq(ConfigParamPO::getIsDelete, true)
-                ;
+                .eq(ConfigParamPO::getPaywayCode, configParamPO.getPaywayCode())
+                .eq(ConfigParamPO::getPayTerminalCode, configParamPO.getPayTerminalCode());
 
-        return null;
+        return this.selectList(queryWrapper);
     }
 }
