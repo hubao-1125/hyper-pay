@@ -20,14 +20,15 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
 
+
 /**
  * 功能描述: 支付工厂-类
  *
  * @author hubao
  * @since 2024/4/1$ 14:46$
  */
-@Component
 @Slf4j
+@Component
 public class PayFactory {
 
 
@@ -44,22 +45,27 @@ public class PayFactory {
     public ResponseVO pay(PayRequestVO payRequestVO) {
 
         String val = UUID.randomUUID().toString();
+
         try {
+
+            // 基础参数校验
             ResponseErrorCodeEnum responseErrorCodeEnum = checkBasePayParam(payRequestVO, val);
             if (!Objects.isNull(responseErrorCodeEnum)) {
                 return ResponseVO.paramError(responseErrorCodeEnum).build();
             }
+
             // 获取支付服务枚举
             PayServiceEnum payServiceEnum = PayServiceEnum.getPayServiceEnumByPaywayEnum(payRequestVO.getPaywayEnum());
+
             // 获取支付服务类
             Class<?> clazz = payServiceEnum.getClazz();
             PayService payService = (PayService) applicationContext.getBean(clazz);
+
             // 校验一下从数据库得到的支付配置
             BasePayConfigObj basePayConfigObj = castConfigObj(payRequestVO);
             if (Objects.isNull(basePayConfigObj)) {
                 return null;
             }
-
             Object payErrorEnumObj = checkPayConfigObj(basePayConfigObj, payRequestVO);
             if (!Objects.isNull(payErrorEnumObj)) {
                 return ResponseVO.configError(payErrorEnumObj).build();
