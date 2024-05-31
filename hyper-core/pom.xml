@@ -27,6 +27,11 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>io.github.hubao-1125.hyperpay</groupId>
+            <artifactId>hyper-common</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

@@ -1,5 +1,7 @@
 package io.github.hyperpay.service.service.impl;
 
+import io.github.easypaysingle.core.client.PayClient;
+import io.github.easypaysingle.core.client.wx.WXPayClient;
 import io.github.easypaysingle.core.config.BasePayConfigObj;
 import io.github.hyperpay.common.enums.PayTerminalEnum;
 import io.github.hyperpay.common.enums.ResponseErrorCodeEnum;
@@ -37,6 +39,7 @@ public class WXPayServiceImpl implements PayService {
         }
 
         // 调用client支付
+        ResponseVO responseVO = PayClient.pay(payRequestVO, payConfigObj);
 
         // 根据支付结果返回
 
