@@ -32,6 +32,11 @@
             <groupId>io.github.hubao-1125.hyperpay</groupId>
             <artifactId>hyper-common</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.github.javen205</groupId>
+            <artifactId>IJPay</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
