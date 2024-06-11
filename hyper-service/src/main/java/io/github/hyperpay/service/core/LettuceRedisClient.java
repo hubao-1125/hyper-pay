@@ -271,4 +271,18 @@ public class LettuceRedisClient {
         }
         return resultTime;
     }
+
+
+    public Long incr(String key) {
+        return redisTemplate.opsForValue().increment(key);
+    }
+
+    public Long incrExpire(String key, Integer seconds) {
+        if (Objects.isNull(seconds)) {
+            return incr(key);
+        }
+        Long increment = redisTemplate.opsForValue().increment(key);
+        redisTemplate.expire(key, seconds, TimeUnit.SECONDS);
+        return increment;
+    }
 }

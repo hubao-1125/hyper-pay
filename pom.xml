@@ -114,7 +114,7 @@
 
             <dependency>
                 <groupId>com.github.javen205</groupId>
-                <artifactId>IJPay-Core</artifactId>
+                <artifactId>IJPay-All</artifactId>
                 <version>${IJpay.version}</version>
             </dependency>
         </dependencies>

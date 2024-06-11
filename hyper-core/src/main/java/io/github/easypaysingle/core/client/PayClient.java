@@ -2,6 +2,7 @@ package io.github.easypaysingle.core.client;
 
 import io.github.easypaysingle.core.client.wx.WXPayClient;
 import io.github.easypaysingle.core.config.BasePayConfigObj;
+import io.github.easypaysingle.core.config.wx.WXPayConfigObj;
 import io.github.hyperpay.common.model.vo.request.pay.PayRequestVO;
 import io.github.hyperpay.common.model.vo.response.ResponseVO;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +19,7 @@ public class PayClient {
 
         switch (payRequestVO.getPaywayEnum()) {
             case WXPAY:
-                return WXPayClient.pay(payRequestVO, payConfigObj);
+                return WXPayClient.pay(payRequestVO, (WXPayConfigObj) payConfigObj);
             case ALIPAY:
                 return null;
             case UNIONPAY:

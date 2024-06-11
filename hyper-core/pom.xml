@@ -35,7 +35,7 @@
 
         <dependency>
             <groupId>com.github.javen205</groupId>
-            <artifactId>IJPay</artifactId>
+            <artifactId>IJPay-All</artifactId>
         </dependency>
     </dependencies>
 
