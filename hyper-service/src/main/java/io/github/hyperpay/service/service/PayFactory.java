@@ -10,6 +10,7 @@ import io.github.hyperpay.service.core.LettuceRedisClient;
 import io.github.hyperpay.service.core.pay.config.BasePayConfigObj;
 import io.github.hyperpay.service.core.pay.config.wx.WXPayConfigObj;
 import io.github.hyperpay.service.enums.PayServiceEnum;
+import io.github.hyperpay.service.utils.PayNumberUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +42,9 @@ public class PayFactory {
     @Autowired
     private PayConfigService payConfigService;
 
+    @Autowired
+    private PayNumberUtil payNumberUtil;
+
 
     public ResponseVO pay(PayRequestVO payRequestVO) {
 
@@ -71,8 +75,9 @@ public class PayFactory {
                 return ResponseVO.configError(payErrorEnumObj).build();
             }
 
+            String payNumber16 = payNumberUtil.generatePayNumber16();
             // 调用支付服务
-            return payService.pay(payRequestVO, basePayConfigObj);
+            return payService.pay(payRequestVO, basePayConfigObj, payNumber16);
         } catch (Exception e) {
             log.info("pay exception ", e);
             return ResponseVO.fail(ResponseErrorCodeEnum.SYSTEM_ERROR).build();

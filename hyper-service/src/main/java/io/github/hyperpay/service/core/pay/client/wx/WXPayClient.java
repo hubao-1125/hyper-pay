@@ -6,7 +6,10 @@ import com.ijpay.wxpay.WxPayApi;
 import com.ijpay.wxpay.model.UnifiedOrderModel;
 import io.github.hyperpay.common.model.vo.request.pay.PayRequestVO;
 import io.github.hyperpay.common.model.vo.response.ResponseVO;
+import io.github.hyperpay.service.core.pay.client.BaseClient;
 import io.github.hyperpay.service.core.pay.config.wx.WXPayConfigObj;
+import lombok.Data;
+import lombok.experimental.SuperBuilder;
 
 /**
  * 功能描述: 微信v2支付-类
@@ -14,15 +17,18 @@ import io.github.hyperpay.service.core.pay.config.wx.WXPayConfigObj;
  * @author hubao
  * @since 2024/4/1$ 15:54$
  */
-public class WXPayClient {
+@Data
+@SuperBuilder
+public class WXPayClient extends BaseClient {
 
+    private WXPayConfigObj wxPayConfigObj;
 
-    public static ResponseVO pay(PayRequestVO payRequestVO, WXPayConfigObj payConfigObj) {
+    public ResponseVO pay() {
 
         switch (payRequestVO.getPayTerminalEnum()) {
 
             case H5:
-                return h5(payRequestVO, payConfigObj);
+                return h5(payRequestVO, wxPayConfigObj);
             case PUBLIC_NUMBER:
                 return null;
             case APPLET:

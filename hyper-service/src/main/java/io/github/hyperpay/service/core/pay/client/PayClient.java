@@ -5,6 +5,9 @@ import io.github.hyperpay.common.model.vo.response.ResponseVO;
 import io.github.hyperpay.service.core.pay.client.wx.WXPayClient;
 import io.github.hyperpay.service.core.pay.config.BasePayConfigObj;
 import io.github.hyperpay.service.core.pay.config.wx.WXPayConfigObj;
+import lombok.Builder;
+import lombok.Data;
+import lombok.experimental.SuperBuilder;
 
 /**
  * 功能描述: 支付客户端-类
@@ -12,13 +15,21 @@ import io.github.hyperpay.service.core.pay.config.wx.WXPayConfigObj;
  * @author hubao
  * @since 2024/5/31 17:18
  */
-public class PayClient {
-    public static ResponseVO pay(PayRequestVO payRequestVO, BasePayConfigObj payConfigObj) {
+@Data
+@SuperBuilder
+public class PayClient extends BaseClient{
+
+    private BasePayConfigObj payConfigObj;
+
+
+
+    // ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓method↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+    public ResponseVO pay() {
 
 
         switch (payRequestVO.getPaywayEnum()) {
             case WXPAY:
-                return WXPayClient.pay(payRequestVO, (WXPayConfigObj) payConfigObj);
+                return WXPayClient.builder().payNumber(payNumber).wxPayConfigObj((WXPayConfigObj) payConfigObj).build().pay();
             case ALIPAY:
                 return null;
             case UNIONPAY:

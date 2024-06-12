@@ -14,9 +14,10 @@ public interface PayService {
 
     /**
      * 支付
+     *
      * @param payRequestVO pay request vo
      * @param payConfigObj pay config obj for child class
-     * @return
+     * @param payNumber pay number
      */
-    ResponseVO pay(PayRequestVO payRequestVO, BasePayConfigObj payConfigObj);
+    ResponseVO pay(PayRequestVO payRequestVO, BasePayConfigObj payConfigObj, String payNumber);
 }

@@ -7,6 +7,7 @@ import io.github.hyperpay.common.model.vo.request.pay.WXPayRequestVO;
 import io.github.hyperpay.common.model.vo.response.ResponseVO;
 import io.github.hyperpay.service.core.pay.client.PayClient;
 import io.github.hyperpay.service.core.pay.config.BasePayConfigObj;
+import io.github.hyperpay.service.core.pay.config.wx.WXPayConfigObj;
 import io.github.hyperpay.service.service.PayService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -29,7 +30,7 @@ public class WXPayServiceImpl implements PayService {
 
 
     @Override
-    public ResponseVO pay(PayRequestVO payRequestVO, BasePayConfigObj payConfigObj) {
+    public ResponseVO pay(PayRequestVO payRequestVO, BasePayConfigObj payConfigObj, String payNumber) {
 
         // 校验微信支付参数
         ResponseErrorCodeEnum responseErrorCodeEnum = checkPayParam(payRequestVO);
@@ -38,7 +39,9 @@ public class WXPayServiceImpl implements PayService {
         }
 
         // 调用client支付
-        ResponseVO responseVO = PayClient.pay(payRequestVO, payConfigObj);
+        ResponseVO responseVO = PayClient.builder().payNumber(payNumber).payRequestVO(payRequestVO)
+                .payConfigObj(payConfigObj).build().pay();
+
 
         // 根据支付结果返回
 
