@@ -2,7 +2,7 @@ package io.github.hyperpay.service.service;
 
 import io.github.hyperpay.common.enums.PayTerminalEnum;
 import io.github.hyperpay.common.enums.PaywayEnum;
-import io.github.easypaysingle.core.config.BasePayConfigObj;
+import io.github.hyperpay.service.core.pay.config.BasePayConfigObj;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

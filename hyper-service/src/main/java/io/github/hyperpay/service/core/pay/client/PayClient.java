@@ -1,11 +1,10 @@
-package io.github.easypaysingle.core.client;
+package io.github.hyperpay.service.core.pay.client;
 
-import io.github.easypaysingle.core.client.wx.WXPayClient;
-import io.github.easypaysingle.core.config.BasePayConfigObj;
-import io.github.easypaysingle.core.config.wx.WXPayConfigObj;
 import io.github.hyperpay.common.model.vo.request.pay.PayRequestVO;
 import io.github.hyperpay.common.model.vo.response.ResponseVO;
-import lombok.extern.slf4j.Slf4j;
+import io.github.hyperpay.service.core.pay.client.wx.WXPayClient;
+import io.github.hyperpay.service.core.pay.config.BasePayConfigObj;
+import io.github.hyperpay.service.core.pay.config.wx.WXPayConfigObj;
 
 /**
  * 功能描述: 支付客户端-类

@@ -1,7 +1,5 @@
 package io.github.hyperpay.service.service;
 
-import io.github.easypaysingle.core.config.BasePayConfigObj;
-import io.github.easypaysingle.core.config.wx.WXPayConfigObj;
 import io.github.hyperpay.common.enums.PayTerminalEnum;
 import io.github.hyperpay.common.enums.PaywayEnum;
 import io.github.hyperpay.common.enums.ResponseErrorCodeEnum;
@@ -9,6 +7,8 @@ import io.github.hyperpay.common.enums.config.WXPayConfigCheckResponseEnum;
 import io.github.hyperpay.common.model.vo.request.pay.PayRequestVO;
 import io.github.hyperpay.common.model.vo.response.ResponseVO;
 import io.github.hyperpay.service.core.LettuceRedisClient;
+import io.github.hyperpay.service.core.pay.config.BasePayConfigObj;
+import io.github.hyperpay.service.core.pay.config.wx.WXPayConfigObj;
 import io.github.hyperpay.service.enums.PayServiceEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;

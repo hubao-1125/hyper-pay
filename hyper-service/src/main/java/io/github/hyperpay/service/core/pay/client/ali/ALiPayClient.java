@@ -1,4 +1,4 @@
-package io.github.easypaysingle.core.client.ali;
+package io.github.hyperpay.service.core.pay.client.ali;
 
 /**
  * 功能描述: 支付宝支付客户端-类

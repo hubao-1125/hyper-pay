@@ -1,8 +1,8 @@
 package io.github.hyperpay.service.service;
 
-import io.github.easypaysingle.core.config.BasePayConfigObj;
 import io.github.hyperpay.common.model.vo.request.pay.PayRequestVO;
 import io.github.hyperpay.common.model.vo.response.ResponseVO;
+import io.github.hyperpay.service.core.pay.config.BasePayConfigObj;
 
 /**
  * 功能描述: 支付统一-接口

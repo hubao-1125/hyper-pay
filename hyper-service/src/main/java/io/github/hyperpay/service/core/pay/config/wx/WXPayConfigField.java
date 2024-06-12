@@ -1,4 +1,4 @@
-package io.github.easypaysingle.core.config.wx;
+package io.github.hyperpay.service.core.pay.config.wx;
 
 /**
  * 功能描述: 微信v2支付配置字段-类

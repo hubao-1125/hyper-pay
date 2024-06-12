@@ -1,11 +1,8 @@
-package io.github.easypaysingle.core.config.wx;
+package io.github.hyperpay.service.core.pay.config.wx;
 
-import io.github.easypaysingle.core.config.BasePayConfigField;
-import io.github.easypaysingle.core.config.BasePayConfigObj;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
+import io.github.hyperpay.service.core.pay.config.BasePayConfigField;
+import io.github.hyperpay.service.core.pay.config.BasePayConfigObj;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;

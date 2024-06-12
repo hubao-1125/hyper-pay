@@ -28,10 +28,6 @@
             <groupId>io.github.hubao-1125.hyperpay</groupId>
             <artifactId>hyper-common</artifactId>
         </dependency>
-        <dependency>
-            <groupId>io.github.hyperpay</groupId>
-            <artifactId>hyper-core</artifactId>
-        </dependency>
 
 
         <dependency>
@@ -81,6 +77,17 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.javen205</groupId>
+            <artifactId>IJPay-All</artifactId>
         </dependency>
     </dependencies>
 

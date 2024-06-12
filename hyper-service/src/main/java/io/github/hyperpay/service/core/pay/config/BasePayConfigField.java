@@ -1,4 +1,4 @@
-package io.github.easypaysingle.core.config;
+package io.github.hyperpay.service.core.pay.config;
 
 /**
  * 功能描述: -类

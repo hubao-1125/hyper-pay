@@ -1,13 +1,12 @@
-package io.github.easypaysingle.core.client.wx;
+package io.github.hyperpay.service.core.pay.client.wx;
 
 import com.ijpay.core.enums.SignType;
 import com.ijpay.core.kit.WxPayKit;
 import com.ijpay.wxpay.WxPayApi;
 import com.ijpay.wxpay.model.UnifiedOrderModel;
-import io.github.easypaysingle.core.config.wx.WXPayConfigObj;
 import io.github.hyperpay.common.model.vo.request.pay.PayRequestVO;
 import io.github.hyperpay.common.model.vo.response.ResponseVO;
-import lombok.extern.slf4j.Slf4j;
+import io.github.hyperpay.service.core.pay.config.wx.WXPayConfigObj;
 
 /**
  * 功能描述: 微信v2支付-类
@@ -15,7 +14,6 @@ import lombok.extern.slf4j.Slf4j;
  * @author hubao
  * @since 2024/4/1$ 15:54$
  */
-@Slf4j
 public class WXPayClient {
 
 
@@ -46,7 +44,6 @@ public class WXPayClient {
                 .appid(payConfigObj.getAppId()).mch_id(payConfigObj.getMchId())
                 .nonce_str(WxPayKit.generateStr()).sign_type(SignType.HMACSHA256.getType())
                 .body(payRequestVO.getGoodsBody()).out_trade_no(payRequestVO.getMainOrderNumber())
-                .total_fee(payRequestVO.getAmount().multiply(new BigDecimal(100)).intValue())
                 .spbill_create_ip(payRequestVO.getIp())
                 .notify_url(payConfigObj.getNotifyURL())
                 .trade_type("MWEB")

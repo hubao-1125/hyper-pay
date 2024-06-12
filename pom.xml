@@ -31,7 +31,6 @@
     <modules>
         <module>hyper-common</module>
         <module>hyper-controller</module>
-        <module>hyper-core</module>
         <module>hyper-demo</module>
         <module>hyper-sdk</module>
         <module>hyper-service</module>
@@ -44,11 +43,6 @@
             <dependency>
                 <groupId>io.github.hubao-1125.hyperpay</groupId>
                 <artifactId>hyper-common</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.github.hyperpay</groupId>
-                <artifactId>hyper-core</artifactId>
                 <version>${revision}</version>
             </dependency>
 
