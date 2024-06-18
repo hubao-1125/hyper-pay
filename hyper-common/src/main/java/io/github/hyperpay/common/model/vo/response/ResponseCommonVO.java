@@ -18,11 +18,13 @@ public class ResponseCommonVO implements Serializable {
     // 返回信息↓
     /**
      * 返回码
+     * @DocView.Required
      */
     protected String code;
 
     /**
      * 返回信息
+     * @DocView.Required
      */
     protected String msg;
 
@@ -39,11 +41,13 @@ public class ResponseCommonVO implements Serializable {
     // 支付参数↓
     /**
      * 支付订单号
+     * @DocView.Required
      */
     protected String payOrderNumber;
 
     /**
      * 三方订单号
+     * @DocView.Required
      */
     protected String thirdOrderNumber;
 
