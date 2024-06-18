@@ -3,7 +3,6 @@ package io.github.hyperpay.common.enums;
 import lombok.Getter;
 
 /**
- * 功能描述:  支付终端-枚举类
  *
  * @author hubao
  * @since 2024/3/28 14:44

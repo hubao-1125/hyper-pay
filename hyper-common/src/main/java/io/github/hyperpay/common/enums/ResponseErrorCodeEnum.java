@@ -3,7 +3,6 @@ package io.github.hyperpay.common.enums;
 import lombok.Getter;
 
 /**
- * 功能描述: 支付错误码返回枚举-类
  *
  * @author hubao
  * @since 2024/4/1$ 14:53$
