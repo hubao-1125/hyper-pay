@@ -1,11 +1,9 @@
 package io.github.hyperpay.service.core.pay.client;
 
-import io.github.hyperpay.common.model.vo.request.pay.PayRequestVO;
 import io.github.hyperpay.common.model.vo.response.ResponseVO;
 import io.github.hyperpay.service.core.pay.client.wx.WXPayClient;
 import io.github.hyperpay.service.core.pay.config.BasePayConfigObj;
 import io.github.hyperpay.service.core.pay.config.wx.WXPayConfigObj;
-import lombok.Builder;
 import lombok.Data;
 import lombok.experimental.SuperBuilder;
 

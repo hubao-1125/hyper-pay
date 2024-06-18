@@ -16,7 +16,8 @@ import java.io.Serializable;
 public class WXPayRequestVO implements Serializable {
 
     /**
-     * openid
+     * openid 公众号和小程序支付时必填
      */
     private String openid;
+
 }

@@ -16,7 +16,8 @@ public enum WXPayConfigCheckResponseEnum {
     SUB_MCH_ID_IS_NULL("SUB_MCH_ID_IS_NULL", "submchid为空，请检查支付配置"),
     PARTNER_KEY_IS_NULL("PARTNER_KEY_IS_NULL", "秘钥为空，请检查支付配置"),
     CERT_PATH_IS_NULL("CERT_PATH_IS_NULL", "退款证书不存在，请检查支付配置"),
-    NOTIFY_URL_IS_NULL("NOTIFY_URL_IS_NULL", "异步回调地址为空，请检查支付配置")
+    NOTIFY_URL_IS_NULL("NOTIFY_URL_IS_NULL", "异步回调地址为空，请检查支付配置"),
+    NOTIFY_URL_IS_ERROR("NOTIFY_URL_IS_ERROR", "异步回调地址格式错误，请检查支付配置"),
 
     ;
     private final String errorCode;

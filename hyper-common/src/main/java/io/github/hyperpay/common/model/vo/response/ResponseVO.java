@@ -3,13 +3,11 @@ package io.github.hyperpay.common.model.vo.response;
 import io.github.hyperpay.common.enums.ResponseCodeEnum;
 import io.github.hyperpay.common.enums.ResponseErrorCodeEnum;
 import io.github.hyperpay.common.enums.config.WXPayConfigCheckResponseEnum;
-import io.github.hyperpay.common.model.vo.response.pay.WXPayResponseVO;
+import io.github.hyperpay.common.model.vo.response.pay.wx.WXPayResponseVO;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
  * 功能描述: 支付返回-类
@@ -17,7 +15,6 @@ import java.util.Objects;
  * @author hubao
  * @since 2024/3/28$ 15:46$
  */
-@EqualsAndHashCode(callSuper = true)
 @Data
 @SuperBuilder
 public class ResponseVO extends ResponseCommonVO implements Serializable {
@@ -63,7 +60,7 @@ public class ResponseVO extends ResponseCommonVO implements Serializable {
         return createBuilder(ResponseCodeEnum.SUCCESS);
     }
 
-    public static ResponseVOBuilder fail() {
+    public static ResponseVOBuilder<?, ?> fail() {
         return createBuilder(ResponseCodeEnum.FAIL);
     }
 

@@ -1,15 +1,29 @@
 package io.github.hyperpay.service.core.pay.client.wx;
 
+import cn.hutool.json.JSONUtil;
 import com.ijpay.core.enums.SignType;
 import com.ijpay.core.kit.WxPayKit;
 import com.ijpay.wxpay.WxPayApi;
 import com.ijpay.wxpay.model.UnifiedOrderModel;
+import io.github.hyperpay.common.enums.PaywayEnum;
+import io.github.hyperpay.common.enums.ResponseErrorCodeEnum;
 import io.github.hyperpay.common.model.vo.request.pay.PayRequestVO;
 import io.github.hyperpay.common.model.vo.response.ResponseVO;
+import io.github.hyperpay.common.model.vo.response.pay.wx.WXH5ResponseVO;
+import io.github.hyperpay.common.model.vo.response.pay.wx.WXPayResponseVO;
+import io.github.hyperpay.common.utils.ConstantUtil;
 import io.github.hyperpay.service.core.pay.client.BaseClient;
 import io.github.hyperpay.service.core.pay.config.wx.WXPayConfigObj;
+import io.github.hyperpay.service.core.pay.constant.WXPayConstantObj;
+import io.github.hyperpay.service.utils.MoneyUtil;
+import io.github.hyperpay.service.utils.wx.WXConstantUtil;
 import lombok.Data;
 import lombok.experimental.SuperBuilder;
+import lombok.extern.slf4j.Slf4j;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 /**
  * 功能描述: 微信v2支付-类
@@ -19,6 +33,7 @@ import lombok.experimental.SuperBuilder;
  */
 @Data
 @SuperBuilder
+@Slf4j
 public class WXPayClient extends BaseClient {
 
     private WXPayConfigObj wxPayConfigObj;
@@ -46,20 +61,55 @@ public class WXPayClient extends BaseClient {
 
     private static ResponseVO h5(PayRequestVO payRequestVO, WXPayConfigObj payConfigObj) {
 
+
+        Map<String, String> sceneMap = new HashMap<String, String>(){{
+            put("type", "Wap");
+            put("wap_url", payConfigObj.getNotifyURL());
+            put("wap_name", "pay_center");
+        }};
+
         UnifiedOrderModel build = UnifiedOrderModel.builder()
-                .appid(payConfigObj.getAppId()).mch_id(payConfigObj.getMchId())
-                .nonce_str(WxPayKit.generateStr()).sign_type(SignType.HMACSHA256.getType())
-                .body(payRequestVO.getGoodsBody()).out_trade_no(payRequestVO.getMainOrderNumber())
+                .appid(payConfigObj.getAppId())
+                .mch_id(payConfigObj.getMchId())
+                .nonce_str(WxPayKit.generateStr())
+                .sign_type(SignType.HMACSHA256.getType())
+                .body(payRequestVO.getGoodsBody())
+                .out_trade_no(payRequestVO.getMainOrderNumber())
+                .total_fee(MoneyUtil.castBigDecimalToPoint(payRequestVO.getAmount()).toString())
                 .spbill_create_ip(payRequestVO.getIp())
-                .notify_url(payConfigObj.getNotifyURL())
-                .trade_type("MWEB")
-                .product_id(payRequestVO.getMainOrderNumber())
+                .notify_url(payConfigObj.getNotifyURL() + ConstantUtil.NOTIFY + ConstantUtil.LEFT_SLASH + ConstantUtil.PAY + PaywayEnum.WXPAY.getPayCode())
+                .trade_type(WXConstantUtil.H5)
+                .scene_info(JSONUtil.createObj().set("h5_info", sceneMap).toString())
                 .build();
 
-        WxPayApi.pushOrder(false, build.toMap());
+        Map<String, String> paramMap = build.createSign(payConfigObj.getPartnerKey(), SignType.HMACSHA256);
+        log.info("WXPayClient h5 pay req paramMap:{}", paramMap);
+        String xmlResult = WxPayApi.pushOrder(false, paramMap);
+        log.info("WXPayClient h5 pay res xmlResult:{}", xmlResult);
+        WXPayConstantObj constantObj = JSONUtil.parseObj(WxPayKit.xmlToMap(xmlResult)).toBean(WXPayConstantObj.class);
+        if (Objects.isNull(constantObj)) {
+            return ResponseVO.fail(ResponseErrorCodeEnum.WX_RES_IS_NULL).build();
+        }
 
+        // return_code
+        if (!WxPayKit.codeIsOk(constantObj.getReturn_code())) {
+            return ResponseVO.fail().errorCode(constantObj.getReturn_code()).errorMsg(constantObj.getReturn_msg()).build();
+        }
+        // result_code
+        if (!WxPayKit.codeIsOk(constantObj.getResult_code())) {
+            return ResponseVO.fail().errorCode(constantObj.getErr_code()).errorMsg(constantObj.getErr_code_des()).build();
+        }
 
-
-        return null;
+        return ResponseVO.success().wxPayResponseVO(
+                WXPayResponseVO.builder()
+                        .wxh5ResponseVO(
+                                WXH5ResponseVO.builder()
+                                        .tradeType(constantObj.getTrade_type())
+                                        .prepayId(constantObj.getPrepay_id())
+                                        .webURL(constantObj.getMweb_url())
+                                        .build()
+                        )
+                        .build()
+        ).build();
     }
 }

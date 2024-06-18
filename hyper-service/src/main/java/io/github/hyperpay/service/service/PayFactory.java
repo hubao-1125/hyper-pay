@@ -119,6 +119,10 @@ public class PayFactory {
             if (StringUtils.isBlank(basePayConfigObj.getNotifyURL())) {
                 return WXPayConfigCheckResponseEnum.NOTIFY_URL_IS_NULL;
             }
+
+            if (!basePayConfigObj.getNotifyURL().endsWith("/")) {
+                return WXPayConfigCheckResponseEnum.NOTIFY_URL_IS_ERROR;
+            }
         }
 
         return null;

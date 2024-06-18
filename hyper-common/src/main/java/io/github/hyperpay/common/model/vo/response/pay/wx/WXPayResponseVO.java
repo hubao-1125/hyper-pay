@@ -1,4 +1,4 @@
-package io.github.hyperpay.common.model.vo.response.pay;
+package io.github.hyperpay.common.model.vo.response.pay.wx;
 
 import lombok.Builder;
 import lombok.Data;
@@ -15,7 +15,7 @@ import java.io.Serializable;
 public class WXPayResponseVO implements Serializable {
 
     /**
-     * 预支付ID
+     * H5支付返回VO
      */
-    private String prepayId;
+    private WXH5ResponseVO wxh5ResponseVO;
 }
